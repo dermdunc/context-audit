@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm test
+      - name: Smoke test the CLI against this repo's own docs
+        # Scans docs/ specifically, not the repo root: this repo's own
+        # mind-palace/ mirror duplicates docs/ content by design (a Hekton
+        # scaffold convention, not a bug), so scanning "." would report a
+        # misleading ~100% redundant pair against itself.
+        run: |
+          node bin/context-audit.mjs docs --ext md
+          node bin/context-audit.mjs docs --json --top 1 > /dev/null
+          node bin/context-audit.mjs --help
