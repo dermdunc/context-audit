@@ -1,0 +1,24 @@
+# Machine-readable run ledger schema.
+# Read by hekton-status and cross-project dashboard aggregators.
+# Scaffolded 2026-07-22 — run standardise-runs-ledger.py --project context-audit --force to enrich.
+schema_version: "1"
+project: context-audit
+project_type: factory-output
+id_prefix: CA
+task_types:
+  - task
+  - review
+  - session
+run_description: "A unit of work in Context Audit that produces a traceable result requiring human review."
+fields:
+  run_id: string
+  project: string
+  task_id: string
+  task_type: string
+  engine: string
+  status: "done | pending-response | in-progress | failed | abandoned"
+  created: date
+  human_confirmed: boolean
+  human_notes: string
+  output_artifact: string
+  failure_reason: string

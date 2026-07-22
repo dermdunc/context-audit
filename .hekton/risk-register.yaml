@@ -1,0 +1,17 @@
+risk_register_version: 1
+project_name: context-audit
+created_date: 2026-07-22
+
+risks:
+  - id: RISK-0001
+    title: "Initial governance baseline incomplete until first review"
+    category: governance
+    likelihood: medium
+    impact: medium
+    status: open
+    owner: dermdunc
+    mitigation: "Run governance preflight and end-session review during first material session."
+    raised_date: 2026-07-22
+    reviewed_date: 2026-07-22
+    links:
+      - "docs/risks.md"

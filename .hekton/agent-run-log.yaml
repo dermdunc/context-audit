@@ -1,0 +1,27 @@
+agent_run_log_version: 1
+project_name: context-audit
+created_date: 2026-07-22
+
+agent_runs:
+  - id: RUN-0001
+    date: 2026-07-22
+    agent: "scaffold-project.sh"
+    role: "New Project Scaffolding Agent"
+    intent: "Create project skeleton and governance baseline."
+    autonomy_level: 3
+    approvals:
+      required: false
+      status: not_required
+    files_touched:
+      - ".hekton/project.yaml"
+      - ".hekton/governance.yaml"
+      - ".hekton/risk-register.yaml"
+      - ".hekton/change-log.yaml"
+      - ".hekton/review-log.yaml"
+      - ".hekton/agent-run-log.yaml"
+    validation:
+      - "Scaffold completed"
+    risks:
+      - "Governance records need review during first material session."
+    next_actions:
+      - "Run governance preflight before implementation."
