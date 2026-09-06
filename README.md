@@ -1,5 +1,9 @@
 # Context Audit
 
+> **Archived 2026-09-06.** Finished factory-output experiment: the CLI shipped, the accompanying
+> blog post published (2026-07-23, `agentic-tekton`), and nothing else in the estate depends on
+> it. See `docs/decisions.md` (2026-09-06) and `docs/retire-promote-review.md`.
+
 **Classification:** factory-output · **Owner:** dermdunc · **Status:** experimental, v0
 
 [![CI](https://github.com/dermdunc/context-audit/actions/workflows/ci.yml/badge.svg)](https://github.com/dermdunc/context-audit/actions/workflows/ci.yml)
